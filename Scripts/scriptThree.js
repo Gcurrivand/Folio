@@ -6,7 +6,7 @@ import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
 
 const canvas = document.getElementById('three-canvas');
 const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
-renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.outputColorSpace = THREE.LinearSRGBColorSpace; // Changed from SRGBColorSpace to ensure accurate color reproduction
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setClearColor(0x000000);
 renderer.setPixelRatio(window.devicePixelRatio);
@@ -31,7 +31,7 @@ wallMesh.position.z = -1.5;
 scene.add(wallMesh);
 
 const camera = new THREE.PerspectiveCamera(20, window.innerWidth / window.innerHeight, 0.5, 1000);
-const cameraTarget = new THREE.Vector3(0.03, 1.2, -1);
+const cameraTarget = new THREE.Vector3(0.01, 1.2, -1);
 const originalCameraPosition = new THREE.Vector3(0.8, 1.75, -1.5);
 camera.position.set(0.8, 1.75, -1.5);
 camera.lookAt(cameraTarget);
@@ -40,7 +40,7 @@ const spotlightTarget = new THREE.Object3D();
 spotlightTarget.position.copy(cameraTarget);
 scene.add(spotlightTarget);
 
-const directionalLight = new THREE.SpotLight(0xffffff, 50);
+const directionalLight = new THREE.SpotLight(0xffffff, 200);
 directionalLight.position.set(2, 2, 2);
 directionalLight.castShadow = true;
 directionalLight.shadow.bias = -0.0005;
@@ -68,17 +68,34 @@ loader.load('scene.gltf', (gltf) => {
 
 const screenGeometry = new THREE.PlaneGeometry(0.319, 0.215);
 const textureLoader = new THREE.TextureLoader();
-const screenTexture = textureLoader.load('../Images/background.jpg');
-const screenMaterial = new THREE.MeshStandardMaterial({ map: screenTexture });
+const screenTexture = textureLoader.load('../Images/background.jpg', function(texture) {
+  // Removed texture.encoding setting to preserve original image colors
+});
+const screenMaterial = new THREE.MeshBasicMaterial({ 
+  map: screenTexture,
+  toneMapped: false // Ensure no tone mapping is applied
+});
 const screenMesh = new THREE.Mesh(screenGeometry, screenMaterial);
 screenMesh.rotation.x = THREE.MathUtils.degToRad(-12.15);
 screenMesh.position.copy(cameraTarget);
 screenMesh.position.z += -0.1485;
 screenMesh.position.y += -0.02;
-screenMesh.position.x += -0.03;
+screenMesh.position.x += -0.02;
 scene.add(screenMesh);
 
-const textMaterial = new THREE.MeshStandardMaterial({ color: 0xffffff, emissive: new THREE.Color(0xffffff), emissiveIntensity: 0.2 });
+const circularImageTexture = textureLoader.load('../Images/picture.png', function(texture) {
+  // Removed texture.encoding setting to preserve original image colors
+});
+const circularGeometry = new THREE.CircleGeometry(0.04, 64);
+const circularMaterial = new THREE.MeshBasicMaterial({ 
+  map: circularImageTexture,
+  toneMapped: false // Ensure no tone mapping is applied
+});
+const circularMesh = new THREE.Mesh(circularGeometry, circularMaterial);
+circularMesh.position.set(0.005, 0.04, 0.001);
+screenMesh.add(circularMesh);
+
+const textMaterial = new THREE.MeshStandardMaterial({ color: 0xffffff, emissive: new THREE.Color(0xffffff), emissiveIntensity: 1 });
 const loaderFont = new FontLoader();
 loaderFont.load('./SegoeUI.json', (font) => {
   const textGeometry = new TextGeometry('Guillaume Currivand', { font: font, size: 0.01, height: 0.0001 });
@@ -88,21 +105,14 @@ loaderFont.load('./SegoeUI.json', (font) => {
   screenMesh.add(textMesh);
 });
 
-const circularImageTexture = textureLoader.load('../Images/picture.png');
-const circularGeometry = new THREE.CircleGeometry(0.04, 64);
-const circularMaterial = new THREE.MeshStandardMaterial({ map: circularImageTexture, side: THREE.DoubleSide });
-const circularMesh = new THREE.Mesh(circularGeometry, circularMaterial);
-circularMesh.position.set(0.005, 0.04, 0.01);
-screenMesh.add(circularMesh);
-
 const greyBorderGeometry = new THREE.PlaneGeometry(0.101, 0.011);
-const greyBorderMaterial = new THREE.MeshStandardMaterial({ color: 0x808080, side: THREE.DoubleSide, emissive: new THREE.Color(0x808080), emissiveIntensity: 0.2 });
+const greyBorderMaterial = new THREE.MeshStandardMaterial({ color: 0x555555, side: THREE.DoubleSide, emissive: new THREE.Color(0x808080), emissiveIntensity: 1 });
 const greyBorderMesh = new THREE.Mesh(greyBorderGeometry, greyBorderMaterial);
 greyBorderMesh.position.set(0.001, -0.035, 0.0009);
 screenMesh.add(greyBorderMesh);
 
 const whiteRectGeometry = new THREE.PlaneGeometry(0.1, 0.01);
-const whiteRectMaterial = new THREE.MeshStandardMaterial({ color: 0xffffff, side: THREE.DoubleSide, emissive: new THREE.Color(0xffffff), emissiveIntensity: 0.3 });
+const whiteRectMaterial = new THREE.MeshStandardMaterial({ color: 0xffffff, side: THREE.DoubleSide, emissive: new THREE.Color(0xffffff), emissiveIntensity: 1 });
 const whiteRectMesh = new THREE.Mesh(whiteRectGeometry, whiteRectMaterial);
 whiteRectMesh.position.set(0.001, -0.035, 0.001);
 screenMesh.add(whiteRectMesh);
@@ -110,7 +120,7 @@ screenMesh.add(whiteRectMesh);
 let whiteRectTextMesh;
 loaderFont.load('./SegoeUI.json', (font) => {
   const whiteRectTextGeometry = new TextGeometry('Password', { font: font, size: 0.005, height: 0.0001 });
-  const whiteRectTextMaterial = new THREE.MeshStandardMaterial({ color: 0x9c9c9c, emissive: new THREE.Color(0x9c9c9c), emissiveIntensity: 1 });
+  const whiteRectTextMaterial = new THREE.MeshStandardMaterial({ color: 0x9c9c9c });
   whiteRectTextMesh = new THREE.Mesh(whiteRectTextGeometry, whiteRectTextMaterial);
   whiteRectTextMesh.position.set(-0.048, -0.003, 0.0);
   whiteRectMesh.add(whiteRectTextMesh);
@@ -124,7 +134,7 @@ let loadedFont;
 loaderFont.load('./SegoeUI.json', (font) => {
   loadedFont = font;
   const textGeometry = new TextGeometry(letters[0], { font: loadedFont, size: 0.005, height: 0.0001 });
-  const textMaterial = new THREE.MeshStandardMaterial({ color: 0x808080, emissive: new THREE.Color(0x808080), emissiveIntensity: 1 });
+  const textMaterial = new THREE.MeshStandardMaterial({ color: 0x555555});
   dynamicTextMesh = new THREE.Mesh(textGeometry, textMaterial);
   dynamicTextMesh.position.set(-0.048, -0.003, 0.0);
   whiteRectMesh.add(dynamicTextMesh);
@@ -184,7 +194,7 @@ let allowScroll = true;
 renderer.domElement.style.position = 'absolute';
 renderer.domElement.style.top = '0';
 renderer.domElement.style.left = '0';
-renderer.domElement.style.zIndex = '-1';
+renderer.domElement.style.zIndex = '10';
 renderer.domElement.style.width = '100%';
 renderer.domElement.style.height = '100%';
 renderer.domElement.dataset.forcecamera = false;
@@ -234,7 +244,7 @@ function handleScroll(event) {
 
     const bboxDynamicText = new THREE.Box3().setFromObject(dynamicTextMesh);
     const cursorXPosition = bboxDynamicText.max.x;
-    cursorMesh.position.x = cursorXPosition == '-Infinity' ? -0.048 : cursorXPosition || 0;
+    cursorMesh.position.x = cursorXPosition == '-Infinity' ? -0.048 : cursorXPosition +0.01 || 0;
 
     currentCameraIndex = newIndex;
     const targetPosition = cameraPositions[currentCameraIndex];

@@ -38,10 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const canvasOpacity = parseFloat(window.getComputedStyle(canvas).opacity);
     if (window.scrollY > 8500) {
       scrollDownElement.style.display = 'none';
-      scrollDownElement.style.zIndex = 0;
     } else {
       scrollDownElement.style.display = 'block';
-      scrollDownElement.style.zIndex = 2;
     }
 
     if (canvasOpacity > 0) {
