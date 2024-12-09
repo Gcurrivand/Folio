@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guillaume-Currivand-Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <script type="module" src="./Scripts/scriptThree.js"></script>
+  <script type="module" src="./Scripts/script.js"></script>
+  <div class="top-left">
+    <button class="menu-button">
+      <span>&#9776;</span>
+    </button>
+    <div class="dropdown-menu hidden">
+      
+    </div>
+    <a href="https://www.linkedin.com/in/guillaume-currivand-206397199" class="linkedin-button" target="_blank" title="LinkedIn">
+      <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" style="width: 24px; height: 24px;">
+    </a>
+    <a href="https://github.com/gcurrivand" class="github-button" target="_blank" title="GitHub">
+      <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" style="width: 24px; height: 24px;">
+    </a>
+  </div>
+  <div class="canvas-container">
+    <canvas id="three-canvas"></canvas>
+  </div>
+  <main>
+    <!--WhoAmI-->
+    <div class="title">
+      Bienvenue
+    </div>
+    <div class="description">Je m'appelle Guillaume Currivand,<br>Diplômé en ingénierie informatique en août 2024. 
+      Je suis capable de développer en full stack avec une préférence pour le front-end. À terme, mon objectif est de proposer un logiciel de gestion des stocks et des commandes.
+      Pour le moment, je souhaite mettre à disposition mes compétences et continuer à les perfectionner.
+      Si vous voulez en savoir plus, je vous invite à poursuivre votre navigation.
+    </div>
+    <div class="separator">---------------------------</div>
+    <!--Projects-->
+    <div class="title">
+      Projets
+    </div>
+    <div class="smallSeparator">-----------</div>
+    <div class="projet">
+      Système de mise à jour d'images Linux 
+    </div>
+    <div class="date">Mai-Août 2024</div>
+    <div class="skills">
+      <div class="skill">Python</div>
+      <div class="skill">Jenkins</div>
+      <div class="skill">Linux</div>
+      <div class="skill">Architecture</div>
+    </div>
+    <div class="description">Développement et intégration d'un serveur Jenkins permettant une mise à jour automatique et personnalisée des OS Linux pour les modules vendus par l'entreprise Avnet Embedded.</div>
+    <div class="smallSeparator">-----------</div>
+    <div class="projet">
+      Tests audio sur bancs de test 
+    </div>
+    <div class="date">Avril 2024</div>
+    <div class="skills">
+      <div class="skill">C++</div>
+      <div class="skill">Linux</div>
+      <div class="skill">Jeux de tests</div>
+    </div>
+    <div class="description">Ajout des tests audio développés en C++ pour les modules vendus par
+      Avnet Embedded. Intégration de ces tests pour une
+      utilisation sur les bancs des lignes de production.</div>
+    <div class="smallSeparator">-----------</div>
+    <div class="projet">
+      Développement full stack d'un progiciel de gestion 
+    </div>
+    <div class="date">Septembre 2021-Mars 2024</div>
+    <div class="skills">
+      <div class="skill">Delphi</div>
+      <div class="skill">C#</div>
+      <div class="skill">.NET</div>
+      <div class="skill">Entity Framework</div>
+      <div class="skill">JS</div>
+      <div class="skill">SQL</div>
+      <div class="skill">Migration</div>
+    </div>
+    <div class="description">Dans le cadre de mon alternance, j'ai participé à la migration d'un système de planification des ressources de la technologie Delphi vers une version full web en C#.</div>
+    <img src="./Images/beegest.png">
+    <div class="description">⦁ 1ère année : Développement supervisé par mon tuteur, migration de la logique métier de Delphi vers la nouvelle technologie.<br>
+                                            Optimisation des requêtes SQL et travail sur la base de données.<br>
+                                            Développement front-end de vues pour le logiciel.</div>
+    <div class="description">⦁ 2ème année : Développement semi-supervisé par mon tuteur, intégration d'un agenda dans la version full web. Adaptation à la charte graphique et ajout de fonctionnalités.</div>
+    <img src="./Images/agenda.png">
+    <div class="description">⦁ 3ème année : Développement entièrement autonome, conception, développement et intégration d'un nouveau système de licences sous forme de microservice. <br>
+                                            Utilisation de l'ORM Entity et création d'un service de licences dans notre version web. Mise en place d'un serveur accessible uniquement par l'entreprise pour la gestion des licences clients.</div>
+    <img src="./Images/conception.png">
+    <div class="smallSeparator">-----------</div>
+    <div class="projet">
+      Logiciel de gestion d'atelier
+    </div>
+    <div class="date">Septembre 2024</div>
+    <div class="skills">
+      <div class="skill">NodeJS</div>
+      <div class="skill">ReactJS</div>
+      <div class="skill">TypeScript</div>
+      <div class="skill">MySQL</div>
+    </div>
+    <div class="description">Dans le cadre d'un processus de recrutement, j'ai développé une petite application permettant la gestion d'un atelier de réparation de matériel de sport.<br>
+                            Utilisation de React pour le front-end et NodeJS/TypeScript pour le back-end.</div>
+    <img src="./Images/atelier.png">
+    <img src="./Images/articles.png">
+    <div class="smallSeparator">-----------</div>
+    <div class="projet">
+      Folio (ce site internet)
+    </div>
+    <div class="date">Novembre 2024</div>
+    <div class="skills">
+      <div class="skill">ThreeJS</div>
+      <div class="skill">Web Dev</div>
+      <div class="skill">JavaScript</div>
+      <div class="skill">CSS</div>
+    </div>
+    <div class="description">Je voulais un portfolio original. J'ai donc choisi l'implémentation d'éléments graphiques 3D avec lesquels on peut interagir. De plus, les animations ont été réalisées par mes soins à l'aide de THREE.JS.</div>
+    <div class="smallSeparator">-----------</div>
+    <div class="projet">
+      Restockio 
+    </div>
+    <div class="date">Novembre 2024 - En cours</div>
+    <div class="skills">
+      <div class="skill">ReactJS</div>
+      <div class="skill">C#</div>
+      <div class="skill">.NET</div>
+      <div class="skill">MySQL</div>
+      <div class="skill">Web Dev</div>
+    </div>
+    <div class="description">Restockio est une solution simple et intuitive de gestion des commandes et des stocks pour les restaurants. Elle centralise le suivi des stocks et des commandes pour optimiser les approvisionnements, réduire le gaspillage, et améliorer l'efficacité. Gagnez du temps et concentrez-vous sur l'essentiel : cuisiner pour vos clients.</div>
+    <div class="separator">---------------------------</div>
+    <div class="projet">
+      CNN Benchmark 
+    </div>
+    <div class="date">Temps libre 2024</div>
+    <div class="skills">
+      <div class="skill">Python</div>
+      <div class="skill">Pytorch</div>
+      <div class="skill">CNN</div>
+      <div class="skill">Vision artificielle</div>
+    </div>
+    <div class="description">Projet visant à tester l'état de l'art des différents réseaux de neurones convolutionnels pour la vision artificielle (LeNet, YOLO, VGG, Fast R-CNN, Mask R-CNN, etc.).<br> L'objectif était de les recréer "from scratch" afin de comprendre leur fonctionnement.</div>
+    <div class="separator">---------------------------</div>
+    <div class="projet">
+      Suppléments
+    </div>
+    <div class="date">Projets d'études</div>
+    <div class="skills">
+      <div class="skill">ReactJS</div>
+      <div class="skill">NodeJS</div>
+      <div class="skill">Java</div>
+      <div class="skill">PHP</div>
+      <div class="skill">MySQL</div>
+      <div class="skill">NoSQL</div>
+      <div class="skill">Python</div>
+      <div class="skill">ML/IA</div>
+    </div>
+    <div class="description"> J'ai également réalisé de nombreux projets lors de mes études (UTBM et IUT Annecy). Je ne donne pas tous leurs détails, car je ne pense pas qu'ils reflètent exactement le monde professionnel.<br>
+                              Cependant, j'ai travaillé sur un réseau social (UTBM), une bataille navale revisitée (UTBM), un jeu sur la norme ISO 9001 (DUT), un site vitrine (DUT) et bien d'autres encore...</div>
+    <div class="separator">---------------------------</div>
+    <div class="title">
+      Un petit plus sur moi ?
+    </div>
+    <div class="smallSeparator">-----------</div>
+    <div class="projet">
+      Sports
+    </div>
+    <div class="description">
+      J'adore le sport, et c'est une vraie passion pour moi. Le ski, le volley, le VTT et le tennis font partie de mes activités préférées.<br> 
+      Pour moi, le sport est une manière de me dépasser tout en profitant de la nature et en partageant de bons moments avec les autres.<br>
+      Il y a cependant quelques petits détails que je souhaite souligner.<br>
+      Ce que j'aime le plus dans le VTT, c'est la construction de chemins. Je trouve cela très gratifiant de voir de nombreuses personnes les emprunter une fois terminés.<br>
+    </div>
+    <div class="description">
+      Pour le ski, j'aime plus particulièrement le freeride. J'adore repousser mes limites en descendant des pentes de plus en plus techniques, toujours dans la limite de mes capacités, bien évidemment ;).
+    </div>
+    <img src="./Images/ski.jpg">
+    <div class="smallSeparator">-----------</div>
+    <div class="projet">
+      Randonnées
+    </div>
+    <div class="description">
+      Je pars régulièrement en randonnée pour "prendre l'air". J'aime la tranquillité de la montagne en petit comité, loin du bruit et des foules.<br>
+      Le sentier est un espace de liberté, et chaque pas rapproche un peu plus de l'objectif : le paysage, le souffle, le moment présent.
+    </div>
+    <img src="./Images/pays1.jpg">
+    <div class="separator">---------------------------</div>
+    <div class="projet">
+      Détails
+    </div>
+    <div class="lastdescription">Developed + Designed by Currivand Guillaume.<br>
+      Computer design based on the Sketchfab model from NLM.<br>
+      COPYRIGHT © 2024 Currivand Guillaume</div>
+  </main>
+
+  <!-- Scroll Down Prompt -->
+  <div class="scroll-down" id="scroll-down">
+    Scroll down
+    <span>&#8681;</span>
+  </div>
+</body>
+</html>

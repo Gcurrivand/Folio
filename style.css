@@ -1,0 +1,310 @@
+        /* General body styling */
+      body {
+        margin: 0;
+        font-family: 'Segoe UI', sans-serif;
+        color: #222831;
+        background-color: #FFD369;
+        display: flex;
+        z-index: -100;
+      }
+
+      /* Main container */
+      main {
+        position: relative;
+        z-index: -2;
+        width: 40%;
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    main img {
+        display: block;
+        margin: 20px auto; /* Maintains vertical spacing, centers horizontally within main */
+        left: 50%; /* Centers horizontally */
+        transform: translateX(-16%); /* Shifts back by half its own width */
+        width: 150%;
+        max-width: 1500px;
+        height: auto;
+        object-fit: contain;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.8);
+        border: 1px solid #000000;
+    }
+    
+      body::-webkit-scrollbar{
+        display: none;
+      }
+
+      .top-left {
+          position: fixed;
+          top: 10px;
+          left: 10px;
+          display: flex;
+          gap: 10px;
+          z-index: 5;
+      }
+
+      .menu-button {
+          background-color: #393E46;
+          color: #EEEEEE;
+          border: none;
+          border-radius: 4px;
+          padding: 10px 25px;
+          margin-right: 15px;
+          cursor: pointer;
+          box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+          font-size: 16px;
+          transition: box-shadow 0.3s ease;
+      }
+
+      .menu-button span {
+          display: inline-block;
+      }
+
+      .menu-button:hover {
+          background-color: #2C2C2C;
+          box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7);
+      }
+
+      .menu-button:active {
+          background-color: #1C1C1C;
+          box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3);
+      }
+
+      /* LinkedIn and GitHub buttons */
+      .linkedin-button, .github-button {
+          color: #222831;
+          background-color: #dddddd;
+          border: none;
+          border-radius: 4px;
+          padding: 10px;
+          cursor: pointer;
+          font-size: 16px;
+          transition: background-color 0.3s ease, box-shadow 0.3s ease;
+          box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+      }
+
+      .linkedin-button:hover {
+          background-color: #005582;
+          box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7);
+      }
+
+      .github-button:hover {
+          background-color: #1A1A1A;
+          box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7);
+      }
+
+      /* Scroll-down indicator */
+      .scroll-down {
+          position: fixed;
+          bottom: 10px;
+          left: 50%;
+          transform: translateX(-50%);
+          font-size: 16px;
+          font-family: Arial, sans-serif;
+          color: #222831;
+          text-align: center;
+      }
+
+      .scroll-down span {
+          display: block;
+          margin-top: 5px;
+          font-size: 24px;
+          animation: bounce 1.5s infinite;
+      }
+
+      @keyframes bounce {
+          0%, 20%, 50%, 80%, 100% {
+              transform: translateY(0);
+          }
+          40% {
+              transform: translateY(-10px);
+          }
+          60% {
+              transform: translateY(-5px);
+          }
+      }
+
+      /* Title styling */
+      .title {
+          display: inline-block;
+          background-color: #222831;
+          color: #FFD369;
+          font-size: 3rem;
+          font-weight: bold;
+          padding: 2px 10px;
+          margin-bottom: 25px;
+          border-radius: 4px;
+          text-align: center;
+      }
+
+      .projet {
+        display: inline-block;
+        background-color: #222831;
+        color: #FFD369;
+        font-size: 1.5rem;
+        font-weight: bold;
+        padding: 2px 10px;
+        margin-bottom: 10px;
+        border-radius: 4px;
+        text-align: center;
+      }
+
+      .separator {
+        background-color: transparent;
+        color: #222831;
+        font-size: 1.7rem;
+        font-weight: bold;
+        margin-bottom: 50px;
+        margin-top: 50px;
+        text-align: center;
+      }
+
+      .smallSeparator {
+        background-color: transparent;
+        color: #222831;
+        font-size: 1.7rem;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 25px;
+      }
+
+      /* Skill badge styling */
+      .skill {
+        display: inline-block;
+        color: #333333;
+        margin: 5px;
+        border-radius: 4px;
+        font-size: 1rem;
+        font-weight: bold;
+        padding: 5px;
+        border: 2px dotted #333333; /* Changed to dotted border */
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Added small shadow */
+      }
+
+      /* Skills container styling */
+      .skills {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          margin-bottom: 20px;
+      }
+
+      /* Description styling */
+      .description {
+          color: #222831;
+          font-size: 1.2rem;
+          text-align: center;
+          font-weight: bold;
+          line-height: 1.6;
+          margin-bottom: 25px;
+      }
+      .lastdescription {
+        color: #222831;
+        font-size: 1.2rem;
+        text-align: center;
+        font-weight: bold;
+        line-height: 1.6;
+        margin-bottom: 25px;
+    }
+
+      /* Description styling */
+      .date {
+        color: #222831;
+        font-size: 1.5rem;
+        text-align: center;
+        font-weight: bold;
+        line-height: 1.6;
+        margin-bottom: 10px;
+    }
+      /* Responsive styling */
+      @media (max-width: 768px) {
+          .menu-button, .linkedin-button, .github-button {
+              padding: 10px 15px;
+              font-size: 14px;
+          }
+
+          .title {
+              font-size: 1.5rem;
+              padding: 8px 16px;
+          }
+
+          .description {
+              font-size: 0.9rem;
+          }
+      }
+
+      @media (max-width: 480px) {
+          .menu-button, .linkedin-button, .github-button {
+              padding: 8px 10px;
+              font-size: 12px;
+          }
+
+          .title {
+              font-size: 1.2rem;
+              padding: 6px 12px;
+          }
+
+          .description {
+              font-size: 0.8rem;
+          }
+
+          .scroll-down {
+              font-size: 14px;
+          }
+
+          .scroll-down span {
+              font-size: 20px;
+          }
+      }
+
+      .hidden {
+        display: none;
+      }
+      
+      .dropdown-menu {
+        position: absolute;
+        top: 50px;
+        left: 0;
+        background: #393E46; /* Clean white background */
+        color: #EEEEEE;
+        border: 1px solid #222831; /* Light gray border for a subtle outline */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+        border-radius: 8px; /* Rounded corners for a modern look */
+        z-index: 1000;
+        padding: 10px;
+        min-width: 200px; /* Ensure consistent dropdown width */
+        animation: fadeIn 0.3s ease-in-out; /* Smooth fade-in effect */
+    }
+    
+    .dropdown-menu a {
+        display: block;
+        padding: 10px 15px; /* Spacious padding for clickable links */
+        text-decoration: none;
+        color: #EEEEEE; /* Consistent dark text color */
+        font-size: 1rem; /* Comfortable font size */
+        font-weight: bold; /* Emphasized links */
+        border-radius: 6px; /* Slightly rounded corners for links */
+        transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover transition */
+    }
+    
+    .dropdown-menu a:hover {
+        background: #222831; /* Warm highlight color */
+        color: #EEEEEE; /* White text on hover */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
+    }
+    
+    /* Smooth fade-in animation */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
