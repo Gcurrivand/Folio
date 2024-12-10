@@ -11,9 +11,10 @@
       /* Main container */
       main {
         position: relative;
-        z-index: -2;
+        z-index: 0;
         width: 40%;
         max-width: 1200px;
+        min-width: 280px;
         margin: 0 auto;
         text-align: center;
         padding: 20px;
@@ -44,7 +45,7 @@
           left: 10px;
           display: flex;
           gap: 10px;
-          z-index: 5;
+          z-index: 100;
       }
 
       .menu-button {
@@ -107,6 +108,7 @@
           font-family: Arial, sans-serif;
           color: #222831;
           text-align: center;
+          z-index: 100;
       }
 
       .scroll-down span {
@@ -282,13 +284,13 @@
     
     .dropdown-menu a {
         display: block;
-        padding: 10px 15px; /* Spacious padding for clickable links */
+        padding: 10px 15px;
         text-decoration: none;
-        color: #EEEEEE; /* Consistent dark text color */
-        font-size: 1rem; /* Comfortable font size */
-        font-weight: bold; /* Emphasized links */
-        border-radius: 6px; /* Slightly rounded corners for links */
-        transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover transition */
+        color: #EEEEEE;
+        font-size: 1rem;
+        font-weight: bold;
+        border-radius: 6px;
+        transition: background-color 0.3s ease, color 0.3s ease;
     }
     
     .dropdown-menu a:hover {
@@ -308,3 +310,56 @@
             transform: translateY(0);
         }
     }
+
+    #loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #FFD369; /* Matches your background color */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        flex-direction: column; /* Centers spinner and text vertically */
+    }
+    
+    .spinner {
+        width: 50px;
+        height: 50px;
+        border: 5px solid #EEEEEE; /* Light border to match your theme */
+        border-top: 5px solid #222831; /* Dark contrast for animation */
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin-bottom: 20px; /* Adds space between spinner and text */
+    }
+    
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+    
+    .loading-text {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #222831; /* Matches your text color */
+        text-align: center;
+        font-family: 'Segoe UI', sans-serif;
+        animation: fadeInOut 2s infinite; /* Subtle fade effect */
+    }
+    
+    @keyframes fadeInOut {
+        0%, 100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0.5;
+        }
+    }
+    
+      

@@ -4,6 +4,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const menuButton = document.querySelector(".menu-button");
   const dropdownMenu = document.querySelector(".dropdown-menu");
   const titles = document.querySelectorAll(".title");
+  const main = document.querySelector("main");
+
+  const loadingScreen = document.getElementById("loading-screen");
+
+  window.addEventListener("load", () => {
+    if (loadingScreen) {
+      loadingScreen.style.transition = "opacity 0.5s ease";
+      loadingScreen.style.opacity = "0";
+      setTimeout(() => {
+        loadingScreen.style.display = "none";
+      }, 500);
+    }
+  });
 
   titles.forEach((title, index) => {
     const menuItem = document.createElement("a");
@@ -34,7 +47,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  window.addEventListener('wheel', (event) => {
+  let lastTouchY = 0;
+
+  function handleScroll(yOffsetChange) {
     const canvasOpacity = parseFloat(window.getComputedStyle(canvas).opacity);
     if (window.scrollY > 8500) {
       scrollDownElement.style.display = 'none';
@@ -43,11 +58,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (canvasOpacity > 0) {
+      return true; // Prevent default scrolling
+    } else if ((window.scrollY <= 0 || window.scrollY === undefined) && yOffsetChange < 0) {
+      canvas.style.opacity = '0.01';
+      canvas.style.zIndex = '1';
+      return true;
+    }
+
+    return false; // Allow default scrolling
+  }
+
+  main.addEventListener('touchstart', (event) => {
+    lastTouchY = event.touches[0].clientY;
+  });
+
+  main.addEventListener('touchmove', (event) => {
+    const touchY = event.touches[0].clientY;
+    const yOffsetChange = lastTouchY - touchY;
+    lastTouchY = touchY;
+    handleScroll(yOffsetChange)
+  });
+
+  window.addEventListener('wheel', (event) => {
+    if (handleScroll(event.deltaY)) {
       event.preventDefault();
-    } else {
-      if ((window.scrollY <= 0 || window.scrollY === undefined) && event.deltaY < 0) {
-        canvas.style.opacity = '0.01';
-      }
     }
   }, { passive: false });
 

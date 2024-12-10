@@ -254,6 +254,36 @@ function handleScroll(event) {
 
 window.addEventListener('wheel', handleScroll);
 
+let isTouchScrolling = false;
+let touchStartY = 0;
+
+const canvasElement = renderer.domElement;
+canvasElement.addEventListener('touchstart', (event) => {
+  if (event.touches.length === 1 && event.target === canvasElement) { // Single-finger touch on canvas
+    isTouchScrolling = true;
+    touchStartY = event.touches[0].clientY;
+    controls.enabled = false; // Disable OrbitControls
+  }
+});
+
+canvasElement.addEventListener('touchmove', (event) => {
+  if (isTouchScrolling && event.touches.length === 1 && event.target === canvasElement) {
+    const touchDelta = event.touches[0].clientY - touchStartY;
+    const scrollEvent = {
+      deltaY: -touchDelta
+    };
+    handleScroll(scrollEvent);
+    touchStartY = event.touches[0].clientY;
+  }
+});
+
+canvasElement.addEventListener('touchend', (event) => {
+  if (event.target === canvasElement) {
+    isTouchScrolling = false;
+    controls.enabled = true; // Re-enable OrbitControls
+  }
+});
+
 function smoothMoveCamera(targetPosition, duration) {
   const startPosition = camera.position.clone();
   const startTime = performance.now();
