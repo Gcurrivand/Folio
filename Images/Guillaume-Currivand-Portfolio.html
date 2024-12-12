@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!-- saved from url=(0031)http://127.0.0.1:5500/home.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guillaume-Currivand-Portfolio</title>
+  <link rel="stylesheet" href="./Guillaume-Currivand-Portfolio_files/style.css">
+  <link href="./Guillaume-Currivand-Portfolio_files/all.min.css" rel="stylesheet">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <div id="loading-screen" style="transition: opacity 0.5s; opacity: 0; display: none;">
+    <div class="spinner"></div>
+    <div class="loading-text">Chargement du profil</div>
+  </div>
+  <script type="module" src="./Guillaume-Currivand-Portfolio_files/scriptThree.js.téléchargement"></script>
+  <script type="module" src="./Guillaume-Currivand-Portfolio_files/script.js.téléchargement"></script>
+
+  <!-- Three.js related interface -->
+  <div class="top-left" style="z-index: -10;">
+    <button class="menu-button">
+      <span>☰</span>
+    </button>
+    <div class="dropdown-menu hidden">
+
+    </div>
+    <a href="https://www.linkedin.com/in/guillaume-currivand-206397199" class="linkedin-button" target="_blank" title="LinkedIn">
+      <img src="./Guillaume-Currivand-Portfolio_files/174857.png" alt="LinkedIn" style="width: 24px; height: 24px;">
+    </a>
+    <a href="https://github.com/gcurrivand" class="github-button" target="_blank" title="GitHub">
+      <img src="./Guillaume-Currivand-Portfolio_files/25231.png" alt="GitHub" style="width: 24px; height: 24px;">
+    </a>
+  </div>
+  <div class="canvas-container">
+    
+  </div>
+  <div class="scroll-down" id="scroll-down" style="z-index: -10;">
+    Défiler vers le bas
+    <span>⇩</span>
+  </div>
+  <div class="site-container">
+    <aside class="sidebar">
+      <div class="profile">
+        <img src="./Guillaume-Currivand-Portfolio_files/picture.png" alt="Profile" class="profile-img">
+        <h1>Currivand Guillaume</h1>
+      </div>
+      <nav class="nav">
+        <ul>
+          <li><i class="fas fa-home"></i><a href="http://127.0.0.1:5500/home.html#"> Accueil</a></li>
+          <li><i class="fas fa-project-diagram"></i><a href="http://127.0.0.1:5500/home.html#"> Projets</a></li>
+          <li><i class="fas fa-blog"></i><a href="http://127.0.0.1:5500/home.html#"> DevBlog</a></li>
+          <li><i class="fas fa-user"></i><a href="http://127.0.0.1:5500/home.html#"> About</a></li>
+          <li><i class="fas fa-envelope"></i><a href="http://127.0.0.1:5500/home.html#"> Contact</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="main-content">1</main>
+  </div>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+<canvas id="three-canvas" data-engine="three.js r170" width="1595" height="911" style="position: absolute; top: 0px; left: 0px; z-index: -10; width: 100%; height: 100%; touch-action: none; transition: opacity 0.5s; opacity: 0;"></canvas><deepl-input-controller><template shadowrootmode="open"><link rel="stylesheet" href="chrome-extension://cofdbpoegempjloogbagkncekinflcnj/build/content.css"><div dir="ltr" style="visibility: initial !important;"><div class="dl-input-translation-container svelte-95aucy"><div></div></div></div></template></deepl-input-controller></body></html>

@@ -1,0 +1,37 @@
+document.addEventListener('DOMContentLoaded', () => {
+  const canvas = document.getElementById('three-canvas');
+  const scrollDownElement = document.getElementById('scroll-down');
+  const menuButton = document.querySelector(".menu-button");
+  const dropdownMenu = document.querySelector(".dropdown-menu");
+  const titles = document.querySelectorAll(".title");
+  const main = document.querySelector("main");
+
+  const loadingScreen = document.getElementById("loading-screen");
+
+  window.addEventListener("load", () => {
+    if (loadingScreen) {
+      loadingScreen.style.transition = "opacity 0.5s ease";
+      loadingScreen.style.opacity = "0";
+      setTimeout(() => {
+        loadingScreen.style.display = "none";
+      }, 500);
+    }
+  });
+
+  titles.forEach((title, index) => {
+    const menuItem = document.createElement("a");
+    menuItem.href = `#title-${index}`;
+    menuItem.textContent = title.textContent;
+    dropdownMenu.appendChild(menuItem);
+    title.id = `title-${index}`;
+  });
+
+  menuButton.addEventListener("click", () => {
+    dropdownMenu.classList.toggle("hidden");
+  });
+
+  window.addEventListener('beforeunload', () => {
+    window.scrollTo(0, 0);
+  });
+  
+});
