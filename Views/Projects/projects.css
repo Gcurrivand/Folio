@@ -1,0 +1,103 @@
+.principal {
+    background-position: center;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.stat {
+    background: #232428;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    padding: 5% 5%;
+}
+
+.stat p {
+    color: rgba(255, 255, 255, 0.2);
+    text-align: left;
+    line-height: 1.8rem;
+}
+
+.stat a {
+    color: rgb(85, 127, 185);
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+
+.stat h3 {
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.stat img {
+    width: 100%;
+    height: 100%;
+    height: 30vh;
+    border-radius: 4px;
+  }
+
+.tech {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 20px 0px;
+    position: relative;
+    z-index: 2;
+}
+
+.tech img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+.tech img:hover {
+    transform: scale(1.2);
+}
+
+.tech img[title]:hover::after {
+    content: attr(title);
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 1000;
+}
+
+.details-button {
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 20px;
+    background-color: #557fb9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.details-button:hover {
+    background-color: #4268a0;
+}
+
+.details-button:active {
+    transform: scale(0.98);
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../../../Views/About/about.css">
+</head>
+
+<div class="header">
+    <h1>Introduction aux Réseaux de Neurones Convolutionnels (CNN) pour la Vision</h1>
+</div>
+
+<div class="about-container">
+    <div class="section">
+        <div class="description">
+            <p>Les réseaux de neurones convolutionnels, ou CNN (Convolutional Neural Networks), sont des modèles d'apprentissage profond largement utilisés dans le domaine de la vision par ordinateur. Ils sont à la base de nombreuses applications modernes telles que la reconnaissance d'images, la détection d'objets et même les voitures autonomes. Mais qu'est-ce qu'un CNN, et pourquoi est-il si puissant pour traiter des images ?</p>
+        </div>
+
+        <h2 class="projet">Le principe de base</h2>
+        <div class="description">
+            <p>Contrairement aux réseaux de neurones classiques, les CNN sont spécialement conçus pour analyser des données ayant une structure spatiale, comme des images. Une image est composée de pixels organisés en grilles (2D), où chaque pixel contient des informations de couleur (par exemple, rouge, vert, bleu). Le défi est de détecter les caractéristiques importantes d'une image, comme les bords, les textures ou les formes, tout en réduisant la complexité du modèle.</p>
+        </div>
+
+        <h2 class="projet">Les composants principaux d'un CNN</h2>
+        <div class="description">
+            <p>Convolution : Cette étape applique des "filtres" (ou "kernels") sur l'image pour extraire des caractéristiques spécifiques, comme les bords ou les motifs. Ces filtres glissent sur l'image (d'où le terme "convolution") et produisent une carte de caractéristiques (feature map).</p>
+            <div class="image-container">
+                <img src="../../../Images/convolution.png" alt="Ancien design" class="section-img">
+            </div>
+            <p>ReLU (Rectified Linear Unit) : Une fonction d'activation qui introduit de la non-linéarité dans le réseau, ce qui permet de modéliser des relations complexes dans les données.</p>
+            <p>Pooling (Sous-échantillonnage) : Cette étape réduit la taille des cartes de caractéristiques, rendant le modèle plus rapide et robuste face aux variations (comme la rotation ou le zoom).</p>
+            <div class="image-container">
+                <img src="../../../Images/pooling.png" alt="Ancien design" class="section-img">
+            </div>
+            <p>Couches entièrement connectées (Fully Connected) : Ces couches connectent toutes les caractéristiques extraites à des neurones classiques pour effectuer des tâches spécifiques, comme la classification.</p>
+        </div>
+
+        <h2 class="projet">Applications pratiques</h2>
+        <div class="description">
+            <p>Les CNN sont utilisés dans des domaines variés, comme :</p>
+            <ul>
+                <li>Reconnaissance faciale (déverrouillage de smartphones)</li>
+                <li>Analyse médicale (diagnostic à partir de radiographies)</li>
+                <li>Surveillance (détection d'objets ou d'intrus)</li>
+            </ul>
+            <p>Les CNN révolutionnent la vision par ordinateur en permettant de résoudre des tâches complexes avec une précision remarquable. Bien qu'ils puissent sembler intimidants, leur architecture repose sur des concepts simples, comme la convolution et le pooling, qui imitent la manière dont notre cerveau traite les images visuelles. Avec un peu de pratique, n'importe qui peut commencer à expérimenter avec ces outils puissants grâce à des bibliothèques comme TensorFlow ou PyTorch.</p>
+            <p>J'ai moi même essayé de développer un cnn basé sur le Unet mais par manque de de ressources, notamment de la puissance de mon gpu je n'ai pas pu le perfectionner voir : <a href="https://github.com/Gcurrivand/nnBench" target="_blank" title="GitHub">nnBench</a> </p>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <a href="https://www.linkedin.com/in/guillaume-currivand-206397199" target="_blank" title="LinkedIn">
+        LinkedIn
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" style="width: 24px; height: 24px;">
+    </a>
+    <a href="https://github.com/gcurrivand" target="_blank" title="GitHub">
+        GitHub
+        <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" style="width: 24px; height: 24px;">
+    </a>
+</div>
+
+</html>

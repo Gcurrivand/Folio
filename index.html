@@ -15,6 +15,13 @@
       }
     }
   </script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function() {
+      emailjs.init("e9z7M9VXJeMfVVDBz");
+      console.log("EmailJS initialized");
+    })();
+  </script>
 </head>
 
 <body>
@@ -53,7 +60,8 @@
         <ul>
           <li><i class="fas fa-home"></i><a class="home-link"> Accueil</a></li>
           <li><i class="fas fa-project-diagram"></i><a class="projects-link"> Projets</a></li>
-          <li><i class="fas fa-blog"></i><a class="devBlog-link"> DevBlog</a></li>
+          <li><i class="fas fa-cogs"></i><a class="services-link"> Services</a></li>
+          <li><i class="fas fa-blog"></i><a class="devblog-link"> DevBlog</a></li>
           <li><i class="fas fa-user"></i><a class="about-link"> About</a></li>
           <li><i class="fas fa-envelope"></i><a class="contact-link"> Contact</a></li>
         </ul>

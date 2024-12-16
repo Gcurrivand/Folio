@@ -1,0 +1,55 @@
+.about-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #232428;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.section {
+    padding: 30px;
+    color: rgb(217, 217, 217);
+}
+
+.projet {
+    color: rgb(85, 127, 185);
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.description {
+    line-height: 1.8;
+    color: rgb(217, 217, 217);
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.section-img {
+    width: 100%;
+    border-radius: 10px;
+    margin: 20px 0;
+    transition: transform 0.3s ease;
+}
+
+.section-img:hover {
+    transform: scale(1.02);
+}
+
+/* Ensure images don't overflow their containers */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Header styling */
+.header {
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    color: rgb(217, 217, 217);
+    font-size: 2.5rem;
+}
