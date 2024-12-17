@@ -7,6 +7,15 @@
   <title>Guillaume-Currivand-Portfolio</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <style>
+    @media (max-width: 768px) {
+      .canvas-container,
+      .top-left,
+      .scroll-down {
+        display: none !important;
+      }
+    }
+  </style>
   <script type="importmap">
     {
       "imports": {
@@ -15,6 +24,16 @@
       }
     }
   </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.innerWidth > 768) {
+        const scriptThree = document.createElement('script');
+        scriptThree.type = 'module';
+        scriptThree.src = './Scripts/scriptThree.js';
+        document.body.appendChild(scriptThree);
+      }
+    });
+  </script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script type="text/javascript">
     (function() {
@@ -22,6 +41,7 @@
       console.log("EmailJS initialized");
     })();
   </script>
+  <script type="module" src="./Scripts/script.js"></script>
 </head>
 
 <body>
@@ -29,9 +49,6 @@
     <div class="spinner"></div>
     <div class="loading-text">Chargement du profil</div>
   </div>
-  <script type="module" src="./Scripts/scriptThree.js"></script>
-  <script type="module" src="./Scripts/script.js"></script>
-
   <!-- Three.js related interface -->
   <div class="top-left">
     <a href="https://www.linkedin.com/in/guillaume-currivand-206397199" class="linkedin-button" target="_blank"
@@ -52,6 +69,9 @@
   </div>
   <div class="site-container">
     <aside class="sidebar">
+      <button class="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </button>
       <div class="profile">
         <img src="Images/picture.png" alt="Profile" class="profile-img">
         <h1>Currivand Guillaume</h1>

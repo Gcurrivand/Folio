@@ -325,4 +325,58 @@ a:hover {
     margin-bottom: 40px;
 }
 
+.menu-toggle {
+    display: none; /* Always hidden by default (desktop) */
+}
+
+/* Add these media query styles */
+@media (max-width: 768px) {
+    .site-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        flex: none;
+        max-width: 100%;
+        padding-top: 2vh;
+        height: auto;
+        position: relative;
+    }
+
+    .profile {
+        margin-bottom: 20px;
+    }
+
+    .profile-img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .nav ul {
+        display: none; /* Hidden by default on mobile */
+        padding-top: 0;
+    }
+
+    .nav.active ul {
+        display: block;
+    }
+
+    .nav ul li {
+        margin: 2vh 0;
+    }
+
+    /* Mobile menu toggle button */
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 24px;
+        background: none;
+        border: none;
+        color: rgb(217, 217, 217);
+        cursor: pointer;
+    }
+}
+
 

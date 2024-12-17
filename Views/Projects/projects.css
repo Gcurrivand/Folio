@@ -101,3 +101,36 @@
 .details-button:active {
     transform: scale(0.98);
 }
+
+/* For larger screens */
+@media screen and (min-width: 1400px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* For medium-large screens */
+@media screen and (max-width: 1399px) {
+    .principal {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* For tablets and mobile */
+@media screen and (max-width: 768px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stat h3 {
+        font-size: 2rem;
+    }
+    
+    .stat img {
+        height: 25vh;
+    }
+}

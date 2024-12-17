@@ -53,3 +53,34 @@ img {
     color: rgb(217, 217, 217);
     font-size: 2.5rem;
 }
+
+/* For larger screens */
+@media screen and (min-width: 1400px) {
+    .about-container {
+        padding: 40px;
+    }
+}
+
+/* For medium-large screens */
+@media screen and (max-width: 1399px) {
+    .about-container {
+        padding: 30px;
+        margin: 20px;
+    }
+}
+
+/* For tablets and mobile */
+@media screen and (max-width: 768px) {
+    .about-container {
+        padding: 20px;
+        margin: 10px;
+    }
+    
+    .header h1 {
+        font-size: 2rem;
+    }
+    
+    .projet {
+        font-size: 1.7rem;
+    }
+}

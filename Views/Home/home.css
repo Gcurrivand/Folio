@@ -81,3 +81,41 @@
     transition: color 0.3s ease;
     overflow: hidden;
 }
+
+/* For larger screens */
+@media screen and (min-width: 1400px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* For medium-large screens */
+@media screen and (max-width: 1399px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .stat {
+        padding: 10% 5%;
+    }
+}
+
+/* For tablets and mobile */
+@media screen and (max-width: 768px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stat h2 {
+        font-size: 2rem;
+    }
+    
+    .customStat img {
+        max-width: 90%;
+    }
+    
+    .tech img {
+        width: 30px;
+        height: 30px;
+    }
+}
