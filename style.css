@@ -329,7 +329,7 @@ a:hover {
     display: none; /* Always hidden by default (desktop) */
 }
 
-/* Add these media query styles */
+
 @media (max-width: 768px) {
     .site-container {
         flex-direction: column;
@@ -363,6 +363,12 @@ a:hover {
 
     .nav ul li {
         margin: 2vh 0;
+    }
+
+    .main-content h1 {
+        font-size: 1.5rem;
+        margin-right: 20px;
+        margin-bottom: 0;
     }
 
     /* Mobile menu toggle button */
